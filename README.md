@@ -52,6 +52,8 @@ Import the above libraries to the java application from where the Aria APIs are 
 
   AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
   ```
+  ###### Deprecated usage
+  
   ```java 
   /**
    * Creates a client to the Aria APIs.
@@ -98,6 +100,8 @@ Import the above libraries to the java application from where the Aria APIs are 
 
   AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
   ```
+  ###### Deprecated usage
+  
   ```java 
   /**
    * Creates a client to the Aria APIs.
@@ -144,6 +148,8 @@ Import the above libraries to the java application from where the Aria APIs are 
 
    AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
   ```
+  ###### Deprecated usage
+  
   ```java 
   /**
    * Creates a client to the Aria APIs.
