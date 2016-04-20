@@ -33,17 +33,18 @@ Import the above libraries to the java application from where the Aria APIs are 
 
   ```java 
   /**
-   * Creates an client to the Aria APIs.
+   * Creates a client to the Aria APIs.
    * Instances are threadsafe.
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
    */
+   
   AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(baseAriaBillingDTO.getUrl());
   ```
 
   ```java 
   /**
-   * Creates an Aria API to the Aria APIs using the provided Jersey client.
+   * Creates a client to the Aria APIs using the provided Jersey client.
    * Instances are threadsafe.
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
@@ -53,11 +54,12 @@ Import the above libraries to the java application from where the Aria APIs are 
   ```
   ```java 
   /**
-   * Creates an client to the Aria APIs.
+   * Creates a client to the Aria APIs.
    * Instances are threadsafe.
    * 
    * @deprecated use {@link AriaBillingCompleteRest(String)} or {@link AriaBillingCompleteRest(String,Client)}     
    */
+   
   AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(baseAriaBillingDTO);
   ```
   ```java 
@@ -68,15 +70,100 @@ Import the above libraries to the java application from where the Aria APIs are 
    * 
    * @deprecated use {@link AriaBillingCompleteRest(String)} or {@link AriaBillingCompleteRest(String,Client)}     
    */
+   
   AriaBillingComplete ariaBillingComplete = AriaBillingBuilder.getAriaSDK(baseAriaBillingDTO);
   ```
   ##### Object-Query APIs
 
   Similarly, to access the Object-Query APIs, instantiate the com.aria.sdk.classes.AriaBillingIntegration as follows
+  
+   ```java 
+  /**
+   * Creates a client to the Aria APIs.
+   * Instances are threadsafe.
+   *
+   * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
+   */
+   
+  AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(baseAriaBillingDTO.getUrl());
+  ```
+
+  ```java 
+  /**
+   * Creates a client to the Aria APIs using the provided Jersey client.
+   * Instances are threadsafe.
+   *
+   * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
+   */
+
+  AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
+  ```
+  ```java 
+  /**
+   * Creates a client to the Aria APIs.
+   * Instances are threadsafe.
+   * 
+   * @deprecated use {@link AriaBillingIntegrationRest(String)} or {@link AriaBillingIntegrationRest(String,Client)}     
+   */
+  AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(baseAriaBillingDTO);
+  ```
+  ```java 
+  /**
+   * On first call constructs the Aria SDK.
+   * Subsequent calls return the same object; the arguments are ignored
+   * Instances are threadsafe.
+   * 
+   * @deprecated use {@link AriaBillingIntegrationRest(String)} or {@link AriaBillingIntegrationRest(String,Client)}     
+   */
+  AriaBillingIntegration ariaBillingIntegration = AriaBillingBuilder.getAriaObjectSDK(baseAriaBillingDTO);
+  ```
+  
 
   ##### AdminTools APIs
 
   Similarly, to access the AdminTools APIs, instantiate the com.aria.sdk.classes.AriaBillingAdministration as follows
+  
+  ```java 
+  /**
+   * Creates a client to the Aria APIs.
+   * Instances are threadsafe.
+   *
+   * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
+   */
+   
+  AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(baseAriaBillingDTO.getUrl());
+  ```
+
+  ```java 
+  /**
+   * Creates a client to the Aria APIs using the provided Jersey client.
+   * Instances are threadsafe.
+   *
+   * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
+   */
+
+   AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
+  ```
+  ```java 
+  /**
+   * Creates a client to the Aria APIs.
+   * Instances are threadsafe.
+   * 
+   * @deprecated use {@link AriaBillingAdministrationRest(String)} or {@link AriaBillingAdministrationRest(String,Client)}     
+   */
+  
+    AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(baseAriaBillingDTO);
+  ```
+  ```java 
+  /**
+   * On first call constructs the Aria SDK.
+   * Subsequent calls return the same object; the arguments are ignored
+   * Instances are threadsafe.
+   * 
+   * @deprecated use {@link AriaBillingAdministrationRest(String)} or {@link AriaBillingAdministrationRest(String,Client)}     
+   */
+  AriaBillingAdministration ariaBillingAdministration = AriaBillingBuilder.getAriaAdminSDK(baseAriaBillingDTO);
+  ```
 
 3. Call the desired API method on the corresponding instance by passing appropriate inputs objects, client_no and auth_key.
 
