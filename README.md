@@ -189,4 +189,4 @@ Import the above libraries to the java application from where the Aria APIs are 
 
 ##More Information
 
-Check out [Aria Developer Central](http://developer.ariasystems.net) for more examples, details, and support on [Aria](http://www.ariasystems.com/) services and features.
+Check out [Aria Developer Central](http://developer.ariasystems.net) for more examples, details, and support on [Aria](http://www.ariasystems.com/) services and features. 
