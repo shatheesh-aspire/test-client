@@ -15,7 +15,7 @@ Download the Java SDK library AriaSDK.jar from the dist folder and the dependent
 
 Import the above libraries to the java application from where the Aria APIs are to be called.
 
-## Usage
+## Usage 
 
 1. Create an instance of the BaseAriaBillingDTO by specifying the dispatcher url and call type as CallType.REST. Also specify the library type as LibraryType.CORE or LibraryType.ADMINTOOLS or LibraryType.OBJECT_QUERY. If library type is not specified, then it defaults to Core API.
   ```java 
