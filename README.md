@@ -17,17 +17,7 @@ Import the above libraries to the java application from where the Aria APIs are 
 
 ## Usage
 
-1. Create an instance of the BaseAriaBillingDTO by specifying the dispatcher url and call type as CallType.REST. Also specify the library type as LibraryType.CORE or LibraryType.ADMINTOOLS or LibraryType.OBJECT_QUERY. If library type is not specified, then it defaults to Core API.
-  ```java 
-  BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
-                          "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php", "logger",
-                          false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.OBJECT_QUERY);   
-```
-  * In the above example, "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" is the dispatcher url.
-  * In the case of Object-Query, the dispatcher url will be similar to 	"https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php".
-  * In the case of AdminTools, the dispatcher url will be similar to "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index".
-    
-2. The AriaBillingComplete class has methods for each Core API of Aria and it can be instantiated in any of the following ways mentioned below.
+1. The AriaBillingComplete class has methods for each Core API of Aria and it can be instantiated in any of the following ways mentioned below.
 
   ##### Core API
 
@@ -61,7 +51,9 @@ Import the above libraries to the java application from where the Aria APIs are 
    * 
    * @deprecated use {@link AriaBillingCompleteRest(String)} or {@link AriaBillingCompleteRest(String,Client)}     
    */
-   
+   BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                          "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php", "logger",
+                          false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.CORE);   
   AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(baseAriaBillingDTO);
   ```
   ```java 
@@ -72,7 +64,9 @@ Import the above libraries to the java application from where the Aria APIs are 
    * 
    * @deprecated use {@link AriaBillingCompleteRest(String)} or {@link AriaBillingCompleteRest(String,Client)}     
    */
-   
+   BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                          "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php", "logger",
+                          false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.CORE);   
   AriaBillingComplete ariaBillingComplete = AriaBillingBuilder.getAriaSDK(baseAriaBillingDTO);
   ```
   ##### Object-Query APIs
@@ -109,6 +103,9 @@ Import the above libraries to the java application from where the Aria APIs are 
    * 
    * @deprecated use {@link AriaBillingIntegrationRest(String)} or {@link AriaBillingIntegrationRest(String,Client)}     
    */
+   BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                          "https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php", "logger",
+                          false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.OBJECT_QUERY);   
   AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(baseAriaBillingDTO);
   ```
   ```java 
@@ -119,6 +116,9 @@ Import the above libraries to the java application from where the Aria APIs are 
    * 
    * @deprecated use {@link AriaBillingIntegrationRest(String)} or {@link AriaBillingIntegrationRest(String,Client)}     
    */
+   BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                          "https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php", "logger",
+                          false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.OBJECT_QUERY);   
   AriaBillingIntegration ariaBillingIntegration = AriaBillingBuilder.getAriaObjectSDK(baseAriaBillingDTO);
   ```
   
@@ -157,7 +157,9 @@ Import the above libraries to the java application from where the Aria APIs are 
    * 
    * @deprecated use {@link AriaBillingAdministrationRest(String)} or {@link AriaBillingAdministrationRest(String,Client)}     
    */
-  
+  BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                          "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index", "logger",
+                          false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.ADMINTOOLS);   
     AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(baseAriaBillingDTO);
   ```
   ```java 
@@ -168,10 +170,16 @@ Import the above libraries to the java application from where the Aria APIs are 
    * 
    * @deprecated use {@link AriaBillingAdministrationRest(String)} or {@link AriaBillingAdministrationRest(String,Client)}     
    */
+   BaseAriaBillingDTO baseAriaBillingDTO = new BaseAriaBillingDTO(
+                          "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index", "logger",
+                          false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.ADMINTOOLS);  
   AriaBillingAdministration ariaBillingAdministration = AriaBillingBuilder.getAriaAdminSDK(baseAriaBillingDTO);
   ```
-
-3. Call the desired API method on the corresponding instance by passing appropriate inputs objects, client_no and auth_key.
+* In the above example, "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" is the dispatcher url.
+* In the case of Object-Query, the dispatcher url will be similar to 	"https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php".
+* In the case of AdminTools, the dispatcher url will be similar to "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index".
+  
+2. Call the desired API method on the corresponding instance by passing appropriate inputs objects, client_no and auth_key.
 
 	In the following example, a sample client_no of 100 and auth_key as 'zzzzz' is used.
 
@@ -187,7 +195,7 @@ Import the above libraries to the java application from where the Aria APIs are 
             // Call the API
             Map<String,Object> hashMapReturnValues = ariaBillingComplete.subscribeEvents(100L,"zzzz", eventListArray);
 
-4. The API response values can be read from the Map object returned by the API method as shown below.
+3. The API response values can be read from the Map object returned by the API method as shown below.
 
             // Read the output from the map as below.
             System.out.println("error_code: " + hashMapReturnValues.get("error_code"));
