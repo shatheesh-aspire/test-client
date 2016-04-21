@@ -28,8 +28,8 @@ Import the above libraries to the java application from where the Aria APIs are 
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
    */
-   
-  AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(baseAriaBillingDTO.getUrl());
+   String endpointURI = "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php";
+  AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(endpointURI);
   ```
 
   ```java 
@@ -39,8 +39,8 @@ Import the above libraries to the java application from where the Aria APIs are 
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
    */
-
-  AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
+  String endpointURI = "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php";
+  AriaBillingComplete ariaBillingComplete = new com.aria.sdk.classes.AriaBillingCompleteRest(endpointURI, Client.create(new DefaultClientConfig()));
   ```
   ###### Deprecated usage
   
@@ -80,8 +80,8 @@ Import the above libraries to the java application from where the Aria APIs are 
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
    */
-   
-  AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(baseAriaBillingDTO.getUrl());
+  String endpointURI = "https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php";
+  AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(endpointURI);
   ```
 
   ```java 
@@ -91,8 +91,8 @@ Import the above libraries to the java application from where the Aria APIs are 
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
    */
-
-  AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
+  String endpointURI = "https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php";
+  AriaBillingIntegration ariaBillingIntegration = new com.aria.sdk.classes.AriaBillingIntegrationRest(endpointURI, Client.create(new DefaultClientConfig()));
   ```
   ###### Deprecated usage
   
@@ -134,8 +134,8 @@ Import the above libraries to the java application from where the Aria APIs are 
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
    */
-   
-  AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(baseAriaBillingDTO.getUrl());
+  String endpointURI = "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index";
+  AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(endpointURI);
   ```
 
   ```java 
@@ -145,8 +145,8 @@ Import the above libraries to the java application from where the Aria APIs are 
    *
    * Since construction is relatively costly, users should reuse a single instance across calls and across threads.   
    */
-
-   AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(baseAriaBillingDTO.getUrl(), Client.create(new DefaultClientConfig()));
+   String endpointURI = "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index";
+   AriaBillingAdministration ariaBillingAdministration = new com.aria.sdk.classes.AriaBillingAdministrationRest(endpointURI, Client.create(new DefaultClientConfig()));
   ```
   ###### Deprecated usage
   
@@ -175,9 +175,9 @@ Import the above libraries to the java application from where the Aria APIs are 
                           false/* Debug */, CallType.REST, OutPutFormat.OUTPUT_JSON, LibraryType.ADMINTOOLS);  
   AriaBillingAdministration ariaBillingAdministration = AriaBillingBuilder.getAriaAdminSDK(baseAriaBillingDTO);
   ```
-* In the above example, "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" is the dispatcher url.
-* In the case of Object-Query, the dispatcher url will be similar to 	"https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php".
-* In the case of AdminTools, the dispatcher url will be similar to "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index".
+	* In the above example, "https://secure.future.stage.ariasystems.net/api/ws/api_ws_class_dispatcher.php" is the dispatcher url.
+	* In the case of Object-Query, the dispatcher url will be similar to 	"https://secure.future.stage.ariasystems.net/api/AriaQuery/objects.php".
+	* In the case of AdminTools, the dispatcher url will be similar to "https://admintools.future.stage.ariasystems.net/index.php/Dispatcher/index".
   
 2. Call the desired API method on the corresponding instance by passing appropriate inputs objects, client_no and auth_key.
 
